@@ -71,7 +71,7 @@ export class CartComponent implements OnInit {
       }
     }).then((result) => {
       if (result.isConfirmed) {
-        this.router.navigate(['/dashbord-admin']);
+        this.router.navigate(['/home']);
       }
     });
   }

@@ -30,7 +30,7 @@ const routes: Routes = [
       path: 'login',
       component: LoginComponent
     },{
-      path: 'dashbord-admin',
+      path: 'home',
       component: DashbordAdminComponent
     },{
       path: 'profile',

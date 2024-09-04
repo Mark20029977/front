@@ -32,7 +32,7 @@ export class RegisterComponent implements OnInit {
     lastName : '',
     phone : '',
     age : '',
-    roleId : '',
+    // roleId : '',
     userName : '',
     password : '',
     confirmPassword : ''

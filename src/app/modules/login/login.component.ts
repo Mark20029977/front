@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
         
         sessionStorage.setItem("userDetail", JSON.stringify(res.data))
         this.dataSharingService.userDetail.next(true);
-        this.router.navigate(['/dashbord-admin']);
+        this.router.navigate(['/home']);
         
       }else{
         Swal.fire({
