@@ -3,9 +3,10 @@
   
   <select [(ngModel)]="selectedProductType" (change)="applyFilters()">
     <option value="">เลือกประเภททั้งหมด</option>
-    <option *ngFor="let type of productTypeList" [value]="type.productTypeId">{{ type.productTypeName }}</option>
+    <option *ngFor="let type of productTypeList" [value]="type.productTypeName">{{ type.productTypeName }}</option>
   </select>
 </div>
+
 
 <div class="product-container">
   <div *ngFor="let product of filteredProductList" class="product-item">

@@ -51,4 +51,25 @@
   button:hover {
     background-color: #2874a6;
   }
+  /* Style for the search bar */
+.search-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
   
+  .search-bar input {
+    width: 60%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .search-bar select {
+    width: 35%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }

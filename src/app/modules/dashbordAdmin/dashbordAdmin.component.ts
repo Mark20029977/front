@@ -82,10 +82,11 @@ export class DashbordAdminComponent implements OnInit, OnDestroy {
   applyFilters() {
     this.filteredProductList = this.productList.filter(product => {
       const matchesQuery = product.productName.toLowerCase().includes(this.searchQuery.toLowerCase());
-      const matchesType = !this.selectedProductType || product.productType.some((type: ProductType) => type.productTypeId === this.selectedProductType);
+      const matchesType = !this.selectedProductType || product.productType[0]?.productTypeName === this.selectedProductType;
       return matchesQuery && matchesType;
     });
   }
+  
   
 
   onDeleteProduct(productId: string) {
