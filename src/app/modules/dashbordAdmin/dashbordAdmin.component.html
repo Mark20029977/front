@@ -1,0 +1,26 @@
+<div class="search-bar">
+  <input [(ngModel)]="searchQuery" (input)="applyFilters()" placeholder="ค้นหาสินค้า...">
+  
+  <select [(ngModel)]="selectedProductType" (change)="applyFilters()">
+    <option value="">เลือกประเภททั้งหมด</option>
+    <option *ngFor="let type of productTypeList" [value]="type.productTypeId">{{ type.productTypeName }}</option>
+  </select>
+</div>
+
+<div class="product-container">
+  <div *ngFor="let product of filteredProductList" class="product-item">
+    <h3>{{ product.productName }}</h3>
+    
+    <!-- Displaying product images -->
+    <div *ngFor="let img of product.imgList">
+      <img [src]="img" alt="{{ product.productName }}" class="product-image">
+    </div>
+    
+    <!-- Displaying product details -->
+    <p>ประเภท: {{ product.productType[0]?.productTypeName }}</p>
+    <p>ราคา: {{ product.price | currency:'THB' }}</p>
+    
+    <!-- Add to Cart button -->
+    <button (click)="addToCart(product)">เพิ่มลงตระกล้า</button>
+  </div>
+</div>

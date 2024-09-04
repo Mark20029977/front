@@ -1,0 +1,126 @@
+/* cart.component.css */
+.cart-container {
+    padding: 50px; /* ลดการ padding */
+    background-color: #f9f9f9;
+    
+    border-radius: 20px;
+    margin: auto; /* จัดกลางหน้าจอ */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* เพิ่มเงาสีดำ */
+    
+  }
+  
+  .cart-items {
+    margin-top: 15px; /* ลดช่องว่างด้านบน */
+  }
+  
+  .cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px; /* ลดช่องว่างด้านล่าง */
+    padding: 8px; /* ลดการ padding */
+    border: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: 5px; /* เพิ่มมุมโค้ง */
+  }
+  
+  .cart-item-img {
+    width: 80px; /* ลดขนาดภาพ */
+    height: 80px;
+    object-fit: cover;
+    margin-right: 15px; /* ลดช่องว่างด้านข้าง */
+  }
+  
+  .cart-item-details {
+    flex-grow: 1;
+  }
+  
+  .quantity-control {
+    display: flex;
+    align-items: center;
+  }
+  
+  .quantity-control button {
+    width: 25px; /* ลดขนาดปุ่ม */
+    height: 25px;
+    border: none;
+    color: #fff;
+    font-size: 14px; /* ลดขนาดตัวอักษร */
+    cursor: pointer;
+    margin: 0 3px; /* ลดช่องว่างระหว่างปุ่ม */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .quantity-control button.decrease {
+    background-color: #dc3545;
+  }
+  
+  .quantity-control button.decrease:hover {
+    background-color: #c82333;
+  }
+  
+  .quantity-control button.increase {
+    background-color: #28a745;
+  }
+  
+  .quantity-control button.increase:hover {
+    background-color: #218838;
+  }
+  
+  .quantity-control span {
+    font-size: 14px; /* ลดขนาดตัวอักษร */
+    margin: 0 5px; /* ลดช่องว่างด้านข้าง */
+  }
+  
+  .btn-remove {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 5px 8px; /* ลดขนาด padding */
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px; /* ขยับปุ่มลงด้านล่าง */
+    font-size: 14px; /* ลดขนาดตัวอักษร */
+  }
+  
+  .btn-remove:hover {
+    background-color: #c82333;
+  }
+  
+  .total-price {
+    font-size: 16px; /* ลดขนาดตัวอักษร */
+    margin-top: 15px; /* ลดช่องว่างด้านบน */
+  }
+  
+  .cart-buttons {
+    margin-top: 15px; /* ลดช่องว่างด้านบน */
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .btn-clear, .btn-payment {
+    color: #fff;
+    border: none;
+    padding: 8px 12px; /* ลดขนาด padding */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px; /* ลดขนาดตัวอักษร */
+  }
+  
+  .btn-clear {
+    background-color: #ff6347;
+  }
+  
+  .btn-clear:hover {
+    background-color: #e5533b;
+  }
+  
+  .btn-payment {
+    background-color: #2ecc71;
+  }
+  
+  .btn-payment:hover {
+    background-color: #27ae60;
+  }

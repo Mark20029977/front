@@ -1,0 +1,67 @@
+<div class="order-status-container">
+    <h2 class="order-status-header">กรอกข้อมูลการสั่งซื้อ</h2>
+  
+    <form [formGroup]="orderForm" (ngSubmit)="gotocart()">
+      <div class="form-group">
+        <label for="address">ที่อยู่:</label>
+        <input id="address" formControlName="address" type="text" class="form-control">
+        <div *ngIf="orderForm.get('address')?.invalid && orderForm.get('address')?.touched" class="error-message">
+          ที่อยู่จำเป็นต้องกรอก
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="city">จังหวัด:</label>
+        <input id="city" formControlName="city" type="text" class="form-control">
+        <div *ngIf="orderForm.get('city')?.invalid && orderForm.get('city')?.touched" class="error-message">
+          จังหวัดจำเป็นต้องกรอก
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="postalCode">รหัสไปรษณีย์:</label>
+        <input id="postalCode" formControlName="postalCode" type="text" class="form-control">
+        <div *ngIf="orderForm.get('postalCode')?.invalid && orderForm.get('postalCode')?.touched" class="error-message">
+          รหัสไปรษณีย์จำเป็นต้องกรอก
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="phoneNumber">เบอร์โทรศัพท์:</label>
+        <input id="phoneNumber" formControlName="phoneNumber" type="text" class="form-control">
+        <div *ngIf="orderForm.get('phoneNumber')?.invalid && orderForm.get('phoneNumber')?.touched" class="error-message">
+          เบอร์โทรศัพท์จำเป็นต้องกรอก และต้องเป็น 10 หลัก
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="amphoe">อำเภอ:</label>
+        <input id="amphoe" formControlName="amphoe" type="text" class="form-control">
+        <div *ngIf="orderForm.get('amphoe')?.invalid && orderForm.get('amphoe')?.touched" class="error-message">
+          อำเภอจำเป็นต้องกรอก
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="tambon">ตำบล:</label>
+        <input id="tambon" formControlName="tambon" type="text" class="form-control">
+        <div *ngIf="orderForm.get('tambon')?.invalid && orderForm.get('tambon')?.touched" class="error-message">
+          ตำบลจำเป็นต้องกรอก
+        </div>
+      </div>
+  
+      <!-- <button type="submit" class="btn-save" [disabled]="orderForm.invalid">บันทึกคำสั่งซื้อ</button> -->
+    </form>
+  
+    <ul class="products-list">
+      <li *ngFor="let item of cartItems" class="product-item">
+        <span class="product-name">{{ item.productName }}</span> - 
+        <span class="product-quantity">จำนวน: {{ item.quantity }}</span> - 
+        <span class="product-price">{{ item.price | currency:'THB' }}</span>
+        <div *ngFor="let img of item.imgList" class="product-image">
+          <img [src]="img" alt="รูปภาพสินค้า">
+        </div>
+      </li>
+    </ul>
+    <p class="total-price">ราคารวม: {{ totalPrice | currency:'THB':'symbol':'1.0-0' }}</p>
+  
+    <div class="cart-buttons">
+      <button class="btn-clear" (click)="clearCart()">ล้างตะกร้า</button>
+      <button class="btn-payment" (click)="gotocart()" [disabled]="orderForm.invalid">ชำระสินค้า</button>
+    </div>
+  </div>

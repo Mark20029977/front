@@ -1,0 +1,24 @@
+<div class="cart-container">
+    <h2>ตะกร้าสินค้า</h2>
+    <div class="cart-items">
+      <div *ngFor="let item of cartItems" class="cart-item">
+        <div *ngIf="item.imgList && item.imgList.length > 0">
+          <img *ngFor="let img of item.imgList" [src]="img" alt="{{ item.productName }}" class="cart-item-img"/>
+        </div>
+        <div class="cart-item-details">
+          <p>{{ item.productName }} - {{ item.price }} บาท</p>
+          <div class="quantity-control">
+            <button class="decrease" (click)="decreaseQuantity(item)">-</button>
+            <span>{{ item.quantity }}</span>
+            <button class="increase" (click)="increaseQuantity(item)">+</button>
+          </div>
+          <!-- <button class="btn-remove" (click)="removeFromCart(item.id)">ลบออกจากตะกร้า</button> -->
+        </div>
+      </div>
+    </div>
+    <p class="total-price">ราคารวม: {{ totalPrice }} บาท</p>
+    <div class="cart-buttons">
+      <button class="btn-clear" (click)="clearCart()">ล้างตะกร้า</button>
+      <button class="btn-payment" (click)="gotocart()">เช็คเอาท์</button>
+    </div>
+  </div>
